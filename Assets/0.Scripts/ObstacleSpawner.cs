@@ -43,8 +43,8 @@ public class ObstacleSpawner : MonoBehaviour
         {
             lastSpawnTime = Time.time;
 
-            //20%의 확률로 2 ~ 4개 장애물이 한꺼번에 생성된다.
-            int spawnCount = Random.value > 0.8f ? Random.Range(2, 5) : 1;
+            //50%의 확률로 2 ~ 4개 장애물이 한꺼번에 생성된다.
+            int spawnCount = Random.value > 0.5f ? Random.Range(2, 5) : 1;
             for (int i = 0; i < spawnCount; i++)
             {
                 SpawnObject();  

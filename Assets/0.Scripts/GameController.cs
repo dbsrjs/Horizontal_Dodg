@@ -32,6 +32,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;   //프레임 설정
+    }
+
     private IEnumerator Start()
     {
         if(Constants.IsDeactivateMain == true)
