@@ -34,11 +34,12 @@ public class Obstacle : MonoBehaviour
     {
         float moveTime = 2f;
         float rotateAngle = Random.Range(10f, 720f) * moveTime;
-        //회전 + 이동 시작
-        StartCoroutine(TransformEffect.OnRotate(transform, Vector3.zero, Vector3.forward * rotateAngle, moveTime));
-        yield return StartCoroutine(TransformEffect.OnMove(transform, start, end , moveTime));
 
-        //크기 축소 시작
+        // 회전(OnRotate) + 이동(OnMove) 시작
+        StartCoroutine(TransformEffect.OnRotate(transform, Vector3.zero, Vector3.forward * rotateAngle, moveTime));
+        yield return StartCoroutine(TransformEffect.OnMove(transform, start, end, moveTime));
+
+        // 크기 축소(OnScale) 시작
         StartCoroutine(TransformEffect.OnScale(transform, Vector3.one, Vector3.zero, 0.5f, OnDie));
     }
 }

@@ -3,14 +3,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    private GameController gameController;
+
+    [SerializeField]
     private Transform left, right;
+
     [SerializeField]
     private float moveSpeed;   //이동 속도
+
     [SerializeField]
     private Vector3 moveDirection = Vector3.right;//이동 방향
 
     private void Update()
     {
+        if(gameController.IsGameStart == false) return;
+
         //마우스 클릭 or 화면 터치로 방향 전환
         if(Input.GetMouseButtonDown(0))
         {
@@ -23,6 +30,7 @@ public class PlayerController : MonoBehaviour
             (moveDirection == Vector3.left && transform.position.x <= left.position.x))
          {
             moveDirection *= -1f;
+            gameController.Score += 2;
          }
 
         transform.position += moveDirection * moveSpeed * Time.deltaTime;

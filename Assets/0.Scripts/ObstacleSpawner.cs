@@ -3,6 +3,9 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField]
+    private GameController gameController;
+
+    [SerializeField]
     private GameObject obstaclePrefab;
 
     [SerializeField]
@@ -24,6 +27,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Update()
     {
+        if(gameController.IsGameStart == false) return;
+
         if(Time.time - lastSpawnTime > currentSpawnTime)
         {
             lastSpawnTime = Time.time;
@@ -45,6 +50,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void DeactivateObject(GameObject clone)
     {
+        gameController.Score++; //플레이어가 회피한 장애물이사라질 때 점수 +1
         memoryPool.DeactivatePoolItem(clone);
     }
 }

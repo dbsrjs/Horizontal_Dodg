@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MemoryPool
 {
@@ -80,26 +81,27 @@ public class MemoryPool
     /// <summary>
     /// poolItemList에 비활성화 상태로 있는 오브젝트 중 하나를 선택해 활성화 하는 메소드
     /// </summary>
-    public GameObject ActivatePoolItem(Vector3 postion)
+    public GameObject ActivatePoolItem(Vector3 position)
     {
-        if(poolItemList == null) return null;
+        if (poolItemList == null) return null;
 
-        //현재 생성해서 관리하는 모든 오브젝트 개수와 현재 활성화 상태인 오브젝트 개수 비교
-        //모든 오브젝트가 할솽화 상태이면 새로운 오브젝트 필요
-        if(maxCount == activeCount)
+        // 현재 생성해서 관리하는 모든 오브젝트 개수와 현재 활성화 상태인 오브젝트 개수 비교
+        // 모든 오브젝트가 활성화 상태이면 새로운 오브젝트 필요
+        if (maxCount == activeCount)
         {
             InstantiateObjects();
         }
 
         int count = poolItemList.Count;
-        for(int i = 0; i < count; ++i)
+        for (int i = 0; i < count; ++i)
         {
             PoolItem poolItem = poolItemList[i];
 
-            if(poolItem.IsActive = false)
+            if (poolItem.IsActive == false)
             {
                 activeCount++;
-                poolItem.gameObject.transform.position = postion;
+
+                poolItem.gameObject.transform.position = position;
                 poolItem.IsActive = true;
 
                 return poolItem.gameObject;
