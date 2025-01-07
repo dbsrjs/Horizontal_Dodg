@@ -1,25 +1,25 @@
 # Horizontal Dodg
 
 # Control
-- Space = 점프 및 도약
+- 좌클릭 = 플레이어 이동
 
 # Information
-1. 5 스테이지 마다 보스전이 진행됩니다.
-2. 몬스터를 잡으면 코인을 얻을 수 있습니다.
-3. 점수는 게임을 재시작해도 저장됩니다.
+1. 장애물을 피하면 1점이 증가합니다.
+2. 플레이어가 벽에 닿으면 2점이 증가합니다.
 
 # How to play video games
 - 장애물을 피해 최대한 높은 점수를 얻으세요.
 
 # Play Scene
   ## Start Scene
-    - 시작 화면에 최고 점수가 표기됩니다.
-  ![image](https://github.com/user-attachments/assets/6eab86e9-5b60-4b80-b9f5-32c4f13e6719)
+    - 화면을 누르면 게임이 시작됩니다.
+  ![image](https://github.com/user-attachments/assets/8af46eea-2892-417a-a716-b354d9059f72)
 
   ## Play Scene 
-    - 여러 UI를 통해 게임의 진행 상황을 알 수 있습니다.
-  ![image](https://github.com/user-attachments/assets/d67b879e-5cfb-4fb9-ad10-f7e65336d74a)
+    - 장애물을 피하면 점수가 올라갑니다.
+ ![image](https://github.com/user-attachments/assets/8f6626c1-0c3c-4f49-8e33-54be7efea042)
 
   ## End Scene
-    - 게임이 종료되면 도달한 점수가 표기합니다.
-  ![image](https://github.com/user-attachments/assets/14ccfed8-6784-43dd-a270-6f4e2a3cea02)
+    - 게임이 종료되면 얻은 점수와 최고 점수를 표시해줍니다.
+![image](https://github.com/user-attachments/assets/99a6edc2-7e01-4415-9f6d-3b79079ea5e3)
+
